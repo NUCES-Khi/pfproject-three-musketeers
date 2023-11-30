@@ -3,7 +3,7 @@
 ## Ukkashah Ahmed 23K-0055
 ## Muhammad Ali 23K-0052
 
-## Proposal
+# Proposal
 Project Proposal: Four in a Row Game in C using 2D between two players 
 ## Overview:
 The project aims to create a two-player "Four in a Row" game in the C programming language using arrays, it will be similar to the console games of the DOS era.
