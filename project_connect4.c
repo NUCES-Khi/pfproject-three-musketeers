@@ -19,17 +19,18 @@
 // default settings
 const int rows = 6, cols = 7;
 
+
 // create a game grid
-char **create_game_grid(); 
+char **create_game_grid();
 
 // change color of character
 void color_char(char player);
 
-// update the frame by clearing the screen and printing the grid
-void update_frame(char **grid);
-
 // print the game grid
 void print_grid(char **grid);
+
+// update the frame by clearing the screen and printing the grid
+void update_frame(char **grid);
 
 // user input for the column number
 int user_input(int player); 
@@ -49,11 +50,15 @@ bool game_win_status(char **grid, int col, int player);
 // check if the game is a draw
 bool game_draw_status(char **grid);
 
-// shows the wins for each player
-void display_wins(int player);
+// displays relevant game end screen to player
+void game_end_display(char **grid, int player, bool type);
 
 // extracts player wins from the wins file
 int *save_win(int player);
+
+// shows the wins for each player
+void display_wins(int player);
+
 
 int main()
 {
@@ -223,6 +228,7 @@ void set_grid(char **grid, int col, int player)
 	grid[row][col] = (player) ? P1 : P2;
 } // end set_grid()
 
+
 bool game_win_status(char **grid, int col, int player)
 {
 	// getting row of current player character
@@ -275,6 +281,7 @@ bool game_win_status(char **grid, int col, int player)
 	return false;
 } // end game_win_status()
 
+
 bool game_draw_status(char **grid)
 {
 	// if top row is not full return false
@@ -283,15 +290,13 @@ bool game_draw_status(char **grid)
 } // end game_draw_status()
 
 
-void display_wins(int player)
+void game_end_display(char **grid, int player, bool type)
 {
-	// get wins from the file
-	int *wins = save_win(player);
-	printf("\nTotal %c wins: %d\nTotal %c wins: %d", P1, wins[1], P2, wins[0]);
+	update_frame(grid);
+	(type) ? printf("%c WINS", (player) ? P1 : P2) : printf("DRAW");
+	display_wins(player);
+}
 
-	// to not immediately close the program at the end
-	Sleep(10000);
-} // end display_wins()
 
 int *save_win(int player)
 {
@@ -335,3 +340,14 @@ int *save_win(int player)
 
 	return wins;
 } // end save_win()
+
+
+void display_wins(int player)
+{
+	// get wins from the file
+	int *wins = save_win(player);
+	printf("\nTotal %c wins: %d\nTotal %c wins: %d", P1, wins[1], P2, wins[0]);
+
+	// to not immediately close the program at the end
+	Sleep(10000);
+} // end display_wins()
