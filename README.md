@@ -23,8 +23,8 @@ Fasih Hasan Khan (23K-0018)\
 Syed Ukkashah Ahmed Shah (23K-0055)\
 Muhammad Ali (23K-0052)\
 Email for contact:\
-k230052@nu.edu.pk\
+k230052@nu.edu.pk
 
 ## Future Work to do
 Update filing and make ouput more better looking\
-Check and test the win coditions\
+Check and test the win coditions
