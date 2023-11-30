@@ -7,7 +7,7 @@
 Project Proposal: Four in a Row Game in C using 2D between two players 
 ## Overview:
 The project aims to create a two-player "Four in a Row" game in the C programming language using arrays, it will be similar to the console games of the DOS era.
-Project Description:
+## Project Description:
 •	The "Four in a Row" game is a classic board game where two players take turns dropping colored discs into a grid to connect four of their discs in a row, either horizontally, vertically, or diagonally.
 •	The game will be implemented in C, providing hands-on experience in functions, user input, logic, and loops.
 Methodology and Approach:
