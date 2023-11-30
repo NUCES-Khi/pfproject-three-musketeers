@@ -16,7 +16,7 @@ Methodology and Approach:
 •	Using functions input translation and win conditions will be checked; filing will be used to store data of wins.\
 •	C's standard libraries will be used for input/output along with heap memory allocation for dynamic storage.\
 
-We kindly request your feedback and approval of this project proposal. Your guidance will be invaluable as we work on creating the "Four in a Row" game in C.\
+We kindly request your feedback and approval of this project proposal. Your guidance will be invaluable as we work on creating the "Four in a Row" game in C.
 
 Sincerely,\
 Fasih Hasan Khan (23K-0018)\
