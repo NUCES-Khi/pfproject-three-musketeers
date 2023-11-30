@@ -10,7 +10,7 @@
 ### Project Description:
 ### •	The "Four in a Row" game is a classic board game where two players take turns dropping colored discs into a grid to connect four of their discs in a row, either ### horizontally, vertically, or diagonally.
 ### •	The game will be implemented in C, providing hands-on experience in functions, user input, logic, and loops.
-## #Methodology and Approach:
+### Methodology and Approach:
 ### •	The input will be taken in the 2D in form of alpha-numeric code making the game user friendly.
 ### •	Loops will be used to validate inputs and check if a player has won.
 ### •	Using functions input translation and win conditions will be checked; filing will be used to store data of wins.
