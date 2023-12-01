@@ -3,6 +3,8 @@
 ## Ukkashah Ahmed 23K-0055
 ## Muhammad Ali 23K-0052
 
+![image](https://github.com/NUCES-Khi/pfproject-three-musketeers/assets/47947561/3f1f7fb8-b242-4126-b864-18673b0648d8)
+
 # Proposal
 Project Proposal: Four in a Row Game in C using 2D between two players 
 ## Overview:
