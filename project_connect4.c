@@ -80,7 +80,7 @@ int *save_win(int player);
 void save_game(char **grid, int player);
 
 // loads the game from the file
-int load_game(char **grid);
+int load_game(char **grid, int player);
 
 // shows the wins for each player
 void display_wins(int player);
@@ -90,7 +90,7 @@ int main()
 {
 	int player, col;
 	bool valid = true, win = false;
-	char **grid = create_game_grid();
+	char player_char, **grid = create_game_grid();
 
 	// game loop
 	while (!win) {
@@ -261,7 +261,7 @@ int user_input(char **grid, int *player)
 	}
 	// loading game if input is 'l' or 'L'
 	else if (!strcmp("l", input) || !strcmp("L", input)) {
-		*player = load_game(grid);
+		*player = load_game(grid, *player);
 		input_flag = true;
 		return -1;
 	} 
@@ -448,8 +448,15 @@ void display_wins(int player)
 } // end display_wins()
 
 
-int load_game(char **grid) {
+int load_game(char **grid, int player) {
 	FILE *fp = fopen(f_save, "r");
+
+	if (fp == NULL) {
+		printf("%24s", "---- No Saves ----");
+		Sleep(300);
+		return player;
+	}
+
 	char save_str[SAVE_BUFFER_SIZE];
 
 	// retrieve saved game data from file
