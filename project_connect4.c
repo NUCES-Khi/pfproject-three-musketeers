@@ -195,9 +195,9 @@ void print_grid(char **grid)
 		printf("%-4d", i+1);
 	}
 	printf("\n");
-	printf("%-2c|", ' ');
+	printf("%-2c\\", ' ');
 	for (int i = 2; i <= cols*4; i++) (i & 1) ? printf("%c", '=') : printf("%c", '-');
-	printf("|");
+	printf("/");
 
 	printf("\n");
 	for (int i = 0; i < rows; i++) {
@@ -218,9 +218,9 @@ void print_grid(char **grid)
 		printf(" |\n");
 	}
 	printf("\n");
-	printf("%-2c|", ' ');
+	printf("%-2c/", ' ');
 	for (int i = 2; i <= cols*4; i++) (i & 1) ? printf("%c", '=') : printf("%c", '-');
-	printf("|\n\n");
+	printf("\\\n\n");
 } // end print_grid(Player **)
 
 
