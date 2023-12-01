@@ -90,7 +90,7 @@ int main()
 {
 	int player, col;
 	bool valid = true, win = false;
-	char player_char, **grid = create_game_grid();
+	char **grid = create_game_grid();
 
 	// game loop
 	while (!win) {
