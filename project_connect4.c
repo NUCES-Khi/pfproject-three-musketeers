@@ -89,7 +89,7 @@ void display_wins(int player);
 int main()
 {
 	int player, col;
-	bool valid = false, win = false;
+	bool valid = true, win = false;
 	char player_char, **grid = create_game_grid();
 
 	// game loop
