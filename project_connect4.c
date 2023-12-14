@@ -213,7 +213,7 @@ int user_input(char **grid, int *player)
 	} 
 	// restarting game if input is 'r' or 'R'
 	else if (!strcmp("r", input) || !strcmp("R", input)) {
-		printf("%24s", "---- Reseting ----");
+		printf("%24s", "---- Resetting ----");
 		Sleep(500);
 		initialize_grid(grid);
 		*player = 0;
