@@ -31,7 +31,6 @@ const int rows = 6, cols = 7;
 // input flag to handle input commands
 bool input_flag = false;
 
-
 int main()
 {
 	int player, col;
@@ -65,9 +64,8 @@ int main()
 			// check if win or draw
 			win = game_win_status(grid, player);
 
-			if (win) {
+			if (win)
 				break;
-			}
 		}
 	}
 	
@@ -233,10 +231,8 @@ bool validate_move(char **grid, int col)
 int get_first_empty(char **grid, int col)
 {
 	int i = rows-1;
-	for (i; i >= 0; i--)
+	for (i; i >= 0 && grid[i][col] != X; i--);
 		// loop from bottom until first non player character found
-		if (grid[i][col] != X) continue;
-		else break;
 	return i;
 } // end get_first_empty()
 
@@ -325,9 +321,10 @@ void game_end_display(char **grid, int player)
 {
 	update_frame(grid);
 	set_color((player) ? 4 : 1);
+	printf("%13c", ' ');
 	printf("%s ", (player) ? "RED" : "BLUE");
 	set_color(l_yellow);
-	printf("WINS");
+	printf("WINS!\n");
 	display_wins(player);
 } // game_end_display()
 
@@ -381,16 +378,13 @@ void display_wins(int player)
 	// get wins from the file
 	int *wins = save_win(player);
 
-	printf("\nTotal ");
-	set_color(red);
-	printf("RED ");
-	set_color(l_yellow);
-	printf(" wins: %d", wins[1]);
-	printf("\nTotal ");
-	set_color(blue);
-	printf("BLUE");
-	set_color(l_yellow);
-	printf(" wins: %d", wins[0]);
+	for (int i = 1; i >= 0; i--) {
+		printf("\n%6cTotal  ", ' ');
+		set_color(i ? red : blue);
+		printf("%4s ", i ? "RED" : "BLUE");
+		set_color(l_yellow);
+		printf(" wins: %2d", wins[i]);
+	}
 
 	// to not immediately close the program at the end
 	Sleep(5000);
