@@ -62,7 +62,7 @@ int get_first_empty(char **grid, int col);
 void set_grid(char **grid, int col, int player);
 
 // check the win status of the game after a move
-bool game_win_status(char **grid, int col, int player);
+bool game_win_status(char **grid, int player);
 
 // check if the game is a draw
 bool game_draw_status(char **grid);
@@ -117,7 +117,7 @@ int main()
 			set_grid(grid, col, player);
 
 			// check if win or draw
-			win = game_win_status(grid, col, player);
+			win = game_win_status(grid, player);
 
 			if (win) {
 				break;
@@ -303,53 +303,56 @@ void set_grid(char **grid, int col, int player)
 } // end set_grid()
 
 
-bool game_win_status(char **grid, int col, int player)
+bool game_win_status(char **grid, int player)
 {
 	// getting row of current player character
 	char player_char = (player) ? P1 : P2;
-	int row = get_first_empty(grid, col)+1;
 
-	// down
-	if (row + 3 < rows) {
-		if (grid[row+1][col] == player_char && grid[row+2][col] == player_char && grid[row+3][col] == player_char)
-				return true;
-	}
+	for (int row = 0; row < rows; row++) {
+		for (int col = 0; col < cols; col++) {
+			// down
+			if (row + 3 < rows) {
+				if (grid[row][col] == player_char && grid[row+1][col] == player_char && grid[row+2][col] == player_char && grid[row+3][col] == player_char)
+					return true;
+			}
 
-	// right
-	if (col + 3 < cols) {
-		if (grid[row][col+1] == player_char && grid[row][col+2] == player_char && grid[row][col+3] == player_char)
-				return true;
-	}
+			// right
+			if (col + 3 < cols) {
+				if (grid[row][col] == player_char && grid[row][col+1] == player_char && grid[row][col+2] == player_char && grid[row][col+3] == player_char)
+					return true;
+			}
 
-	// left
-	if (col - 3 >= 0) {
-		if (grid[row][col-1] == player_char && grid[row][col-2] == player_char && grid[row][col-3] == player_char)
-				return true;
-	}
+			// left
+			if (col - 3 >= 0) {
+				if (grid[row][col] == player_char && grid[row][col-1] == player_char && grid[row][col-2] == player_char && grid[row][col-3] == player_char)
+					return true;
+			}
 
-	// up right
-	if (col + 3 < cols && row - 3 >= 0) {
-		if (grid[row-1][col+1] == player_char && grid[row-2][col+2] == player_char && grid[row-3][col+3] == player_char)
-				return true;
-	}
+			// up right
+			if (col + 3 < cols && row - 3 >= 0) {
+				if (grid[row][col] == player_char && grid[row-1][col+1] == player_char && grid[row-2][col+2] == player_char && grid[row-3][col+3] == player_char)
+					return true;
+			}
 
 
-	// up left
-	if (col - 3 >= 0 && row - 3 >= 0) {
-		if (grid[row-1][col-1] == player_char && grid[row-2][col-2] == player_char && grid[row-3][col-3] == player_char)
-				return true;
-	}
+			// up left
+			if (col - 3 >= 0 && row - 3 >= 0) {
+				if (grid[row][col] == player_char && grid[row-1][col-1] == player_char && grid[row-2][col-2] == player_char && grid[row-3][col-3] == player_char)
+					return true;
+			}
 
-	// down right
-	if (col + 3 < cols && row + 3 < rows) {
-		if (grid[row+1][col+1] == player_char && grid[row+2][col+2] == player_char && grid[row+3][col+3] == player_char)
-				return true;
-	}
+			// down right
+			if (col + 3 < cols && row + 3 < rows) {
+				if (grid[row][col] == player_char && grid[row+1][col+1] == player_char && grid[row+2][col+2] == player_char && grid[row+3][col+3] == player_char)
+					return true;
+			}
 
-	// down left
-	if (col - 3 >= 0 && row + 3 < rows) {
-		if (grid[row+1][col-1] == player_char && grid[row+2][col-2] == player_char && grid[row+3][col-3] == player_char)
-				return true;
+			// down left
+			if (col - 3 >= 0 && row + 3 < rows) {
+				if (grid[row][col] == player_char && grid[row+1][col-1] == player_char && grid[row+2][col-2] == player_char && grid[row+3][col-3] == player_char)
+					return true;
+			}
+		}
 	}
 
 	return false;
