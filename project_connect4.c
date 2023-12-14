@@ -196,21 +196,25 @@ int user_input(char **grid, int *player)
 	} 
 	// saving wins and showing wins if input is 's' or 'S'
 	else if (!strcmp("s", input) || !strcmp("S", input)) {
-		save_game(grid, *player);
-		printf("%24s", "---- Saved ----");
+		printf("%24s", "---- Saving ----");
 		Sleep(500);
+		save_game(grid, *player);
 		*player--;
 		input_flag = true;
 		return -1;
 	}
 	// loading game if input is 'l' or 'L'
 	else if (!strcmp("l", input) || !strcmp("L", input)) {
+		printf("%24s", "---- Loading ----");
+		Sleep(200);
 		*player = load_game(grid, *player);
 		input_flag = true;
 		return -1;
 	} 
 	// restarting game if input is 'r' or 'R'
 	else if (!strcmp("r", input) || !strcmp("R", input)) {
+		printf("%24s", "---- Reseting ----");
+		Sleep(500);
 		initialize_grid(grid);
 		*player = 0;
 		input_flag = true;
