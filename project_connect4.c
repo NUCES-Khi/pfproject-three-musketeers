@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <Windows.h>
+#include "connect4.h"
 
 #define      BUFFER_SIZE 10
 #define SAVE_BUFFER_SIZE 50
