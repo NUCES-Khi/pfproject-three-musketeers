@@ -199,7 +199,6 @@ int user_input(char **grid, int *player)
 		printf("%24s", "---- Saving ----");
 		Sleep(500);
 		save_game(grid, *player);
-		*player--;
 		input_flag = true;
 		return -1;
 	}
