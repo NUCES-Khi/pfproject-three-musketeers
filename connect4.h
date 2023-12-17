@@ -46,6 +46,10 @@ void game_end_display(char **grid, int player);
 // extracts player wins from the wins file
 int *save_win(int player);
 
+// checks if the grid is empty
+// used to prevent saving an empty grid
+bool check_empty_grid(char **grid);
+
 // saves the game progress and turn
 void save_game(char **grid, int player);
 
