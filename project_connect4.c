@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <Windows.h>
+#include <conio.h>
 #include "connect4.h"
 
 #define      BUFFER_SIZE 10
