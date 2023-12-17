@@ -3,8 +3,6 @@
 ## Ukkashah Ahmed 23K-0055
 ## Muhammad Ali 23K-0052
 
-## Sample Image for the game
-![image](https://github.com/NUCES-Khi/pfproject-three-musketeers/assets/47947561/3f1f7fb8-b242-4126-b864-18673b0648d8)
 ## Video demo for the game
 https://github.com/NUCES-Khi/pfproject-three-musketeers/assets/47947561/dd806924-799c-4907-a5b6-86564f0af11c
 
