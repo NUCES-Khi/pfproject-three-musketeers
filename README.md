@@ -55,17 +55,18 @@ for (int i = 0; i < rows; i++)
 ```
 It copies the first n-elements from the save_str variable, and into the grid at the i-th row. & converts the array to a pointer (string).
 
+## Misc functions
+This section will speak of the primary misc functions.
 
-We kindly request your feedback and approval of this project proposal. Your guidance will be invaluable as we work on creating the "Four in a Row" game in C.
+1. set color
+This function makes use of the `Windows.h` library to change the color of the console text. The syntax for this is simply copied via sources online, as there
+is nothing too logical about it.
 
-Sincerely,\
-Fasih Hasan Khan (23K-0018)\
-Syed Ukkashah Ahmed Shah (23K-0055)\
-Muhammad Ali (23K-0052)\
-Email for contact:\
-k230052@nu.edu.pk
+2. update frame
+This function clears the screen and prints the grid.
 
-## Future Work to do
-Update filing and make ouput more better looking\
-Add a save and load game option
-Check and test the win coditions
+3. print grid
+This function prints the grid. The procedure is solely based on trial and error. There is no logic, rhyme or rythm to it.
+
+4. Menu
+Prints the menu. It is to let the user get familiar with the game rules and the commands that come along with it.
