@@ -1,3 +1,6 @@
+//displays start menu
+void start_menu();
+
 // create a game grid
 char **create_game_grid();
 
