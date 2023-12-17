@@ -6,7 +6,7 @@
 # Video demo for the game
 https://github.com/NUCES-Khi/pfproject-three-musketeers/assets/47947561/dd806924-799c-4907-a5b6-86564f0af11c
 
-# Overview:
+# Proposal Idea/Overview:
 This project is about a game called Connect4. The game's rules are simple and have been demonstrated clearly in the video.
 
 # Project Description:
@@ -61,12 +61,23 @@ This section will speak of the primary misc functions.
 1. set color
 This function makes use of the `Windows.h` library to change the color of the console text. The syntax for this is simply copied via sources online, as there
 is nothing too logical about it.
+```c
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+```
 
-2. update frame
+3. update frame
 This function clears the screen and prints the grid.
 
-3. print grid
+4. print grid
 This function prints the grid. The procedure is solely based on trial and error. There is no logic, rhyme or rythm to it.
 
-4. Menu
+5. Menu
 Prints the menu. It is to let the user get familiar with the game rules and the commands that come along with it.
+
+# Datastructures used
+We used a plain 2D array. Our game is grid based and 2D arrays are best in this domain
+The allocation for our array was contigious as this allowed is to easily extract the content from it when saving into the file
+
+# Hurdles
+The biggest hurdle was the game win status
+There were many issues with it, and it took a lot of time to resolve them. However, they have all been resolved now.
