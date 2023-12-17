@@ -80,4 +80,7 @@ The allocation for our array was contigious as this allowed is to easily extract
 
 # Hurdles
 The biggest hurdle was the game win status
-There were many issues with it, and it took a lot of time to resolve them. However, they have all been resolved now.
+There were many issues with it, and it took a lot of time to resolve them. Regardless, they have all been resolved now.
+
+# Main Algorithm
+The overall time complexity for the algorithm for now has no room for improvement. However, it is possible that there exists a faster solution out there
