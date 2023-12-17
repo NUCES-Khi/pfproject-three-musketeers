@@ -36,7 +36,7 @@ int main()
 	int player, col;
 	bool valid = true, win = false;
 	char player_char, **grid = create_game_grid();
-
+        start_menu();
 	// game loop
 	while (!win) {
 		// check at the start if draw
@@ -78,6 +78,107 @@ int main()
 	return 0; // end
 } // end main()
 
+void start_menu() {
+    system("cls");
+
+    // Print "WELCOME" with different colors for each character
+    set_color(10); // Green for 'W'
+    printf("       W");
+    set_color(9); // Blue for 'E'
+    printf("E");
+    set_color(14); // Yellow for 'L'
+    printf("L");
+    set_color(11); // Pink for 'C'
+    printf("C");
+    set_color(13); // Purple for 'O'
+    printf("O");
+    set_color(12); // Red for 'M'
+    printf("M");
+    set_color(15); // Reset color to light yellow for the rest of the characters
+    printf("E ");
+
+    // Print "TO CONNECT 4!" in red
+    set_color(12); // Red for 'T'
+    printf("T");
+    set_color(15); // Reset color to light yellow for the rest of the characters
+    printf("O ");
+
+    set_color(4); // Red for 'C'
+    printf("CONNECT ");
+
+    set_color(12); // Red for '4'
+    printf("4");
+
+    set_color(15); // Reset text color to light yellow
+    printf("!\n\n");
+
+    // Set text color to red for "AFU STUDIOS"
+    set_color(4);
+    printf("%24s", "AFU STUDIOS\n\n");
+
+    // Reset text color to light yellow
+    set_color(15);
+
+    // Print controls with different colors
+    printf("%-12s%s\n", "", "CONTROLS:\n");
+    set_color(10); // Green for 'r'
+    printf("%-12s%s\n", "", "r - reset");
+    set_color(13); // Purple for 's'
+    printf("%-12s%s\n", "", "s - save");
+    set_color(14); // Yellow for 'l'
+    printf("%-12s%s\n", "", "l - load");
+    set_color(4); // Red for 'e'
+    printf("%-12s%s\n", "", "e - exit");
+
+    // Reset text color to light yellow
+    set_color(15);
+     // Set text color to gold
+    set_color(14);
+    printf("\n\n");
+    printf("%27s\n", "CONNECT 4 RULES\n\n");
+    set_color(14);  // Reset text color
+
+    // Print rules with color formatting
+    printf("1. The game is played on a vertically standing grid with 6 rows and 7 columns.\n");
+
+    // set_color(4);  // Red color for 'red'
+    printf("2. Player red (");
+    set_color(4);  // Reset text color
+    printf("R");
+    set_color(14);  // Red color for 'red'
+    printf(") and Player blue (");
+    set_color(1);  // Blue color for 'blue'
+    printf("B");
+    set_color(14);  // Red color for 'red'
+    printf(") take turns to drop their colored discs from the top into any of the\n");
+    printf("   seven columns.\n");
+    printf("3. The disc will then occupy the lowest available space within the chosen column.\n");
+    printf("4. The game continues until one of the players achieves four of their discs\n");
+    printf("   consecutively in a row, either horizontally, vertically, or diagonally.\n");
+    printf("5. The player who connects four discs in a row first wins the game!\n");
+
+    set_color(15);  // Reset text color
+     printf("\n    Press any key to continue");
+
+    // Blinking effect
+    int blink = 1;
+    while (!_kbhit()) {
+        // Toggle visibility by moving the cursor to the beginning of the line
+        printf("\r");
+        if (blink) {
+            printf("    Press any key to continue");
+        } else {
+            printf("                              ");  // Print spaces to clear the line
+        }
+        blink = !blink;
+
+        // Wait for a short time to control the blinking speed
+        Sleep(500);
+    }
+
+    // Clear the line after a key is pressed
+    printf("\r                              ");
+}
 
 char **create_game_grid()
 {
