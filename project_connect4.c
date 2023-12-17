@@ -4,11 +4,11 @@
  */
 
 #include <stdio.h>
+#include <conio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 #include <Windows.h>
-#include <conio.h>
 #include "connect4.h"
 
 #define      BUFFER_SIZE 10
@@ -30,14 +30,15 @@
 const int rows = 6, cols = 7;
 
 // input flag to handle input commands
-bool input_flag = false;
+bool input_flag = true;
 
 int main()
 {
 	int player, col;
 	bool valid = true, win = false;
 	char player_char, **grid = create_game_grid();
-        start_menu();
+    start_menu();
+
 	// game loop
 	while (!win) {
 		// check at the start if draw
@@ -176,7 +177,7 @@ void start_menu() {
         // Wait for a short time to control the blinking speed
         Sleep(500);
     }
-
+    fflush(stdin);
     // Clear the line after a key is pressed
     printf("\r                              ");
 }
@@ -284,6 +285,7 @@ int user_input(char **grid, int *player)
 	printf("Enter column number for Player %d: ", *player+1);
 
 	// using fgets as a safer input than scanf or gets
+	// it will also prevent game crashes when user enters nothing
 	fgets(input, BUFFER_SIZE, stdin);
 
 	// removing trailing new line
@@ -298,9 +300,14 @@ int user_input(char **grid, int *player)
 	} 
 	// saving wins and showing wins if input is 's' or 'S'
 	else if (!strcmp("s", input) || !strcmp("S", input)) {
-		printf("%24s", "---- Saving ----");
-		Sleep(500);
-		save_game(grid, *player);
+		if (check_empty_grid(grid)) {
+			printf("%24s", "---- Empty Grid! ----");
+			Sleep(200);
+		} else {
+			printf("%24s", "---- Saving ----");
+			Sleep(500);
+			save_game(grid, *player);
+		}
 		input_flag = true;
 		return -1;
 	}
@@ -517,6 +524,15 @@ int load_game(char **grid, int player) {
 	// return the player turn
 	return save_str[strlen(save_str)-1]-'0';
 } // load_game()
+
+
+bool check_empty_grid(char **grid)
+{
+	for (int i = 0; i < rows; i++)
+		for (int j = 0; j < cols; j++)
+			if (grid[i][j] == P1 || grid[i][j] == P2) return false;
+	return true;
+} // end check_empty_grid()
 
 
 void save_game(char **grid, int player)
