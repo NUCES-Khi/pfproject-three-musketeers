@@ -1,12 +1,17 @@
-# Programming Fundamentals Project 
+# Connect4: A game
 ## Fasih Hassan Khan 23K-0018
 ## Ukkashah Ahmed 23K-0055
 ## Muhammad Ali 23K-0052
 
+## Sample Image for the game
 ![image](https://github.com/NUCES-Khi/pfproject-three-musketeers/assets/47947561/3f1f7fb8-b242-4126-b864-18673b0648d8)
+## Video demo for the game
+[![Watch the video](https://img.youtube.com/vi/zjpJTAw4/hqdefault.jpg)](https://www.youtube.com/embed/zjpJTAw4)
 
-# Proposal
-Project Proposal: Four in a Row Game in C using 2D between two players 
+[<img src="https://img.youtube.com/vi/zjpJTAw4/hqdefault.jpg" width="600" height="300"
+/>](https://www.youtube.com/embed/zjpJTAw4)
+
+
 ## Overview:
 The project aims to create a two-player "Four in a Row" game in the C programming language using arrays, it will be similar to the console games of the DOS era.
 ## Project Description:
