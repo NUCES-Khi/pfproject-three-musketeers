@@ -76,11 +76,16 @@ Prints the menu. It is to let the user get familiar with the game rules and the 
 
 # Datastructures used
 We used a plain 2D array. Our game is grid based and 2D arrays are best in this domain
-The allocation for our array was contigious as this allowed is to easily extract the content from it when saving into the file
+The allocation for our array was contigious as this allowed is to easily extract the content from it when saving into the file.
+The method to insert into our grid is slightly unorthodox. This game is supposed to simulate the real game where each coin is
+dropped into the grid; therefore, we made every new element "drop" into the grid by inserting it into the first "clear" index in
+the column.
 
 # Hurdles
-The biggest hurdle was the game win status
+The biggest hurdle was the game win status.
 There were many issues with it, and it took a lot of time to resolve them. Regardless, they have all been resolved now.
+Other hurdles were the filing functions. Not necessarily their functionality, but it has more to do with how they
+were to be implemented to ensure better code readability
 
 # Main Algorithm
 The overall time complexity for the algorithm for now has no room for improvement. However, it is possible that there exists a faster solution out there
