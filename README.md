@@ -1,5 +1,5 @@
 # Connect4: A game
-## Fasih Hassan Khan 23K-0018
+## Fasih Hasan Khan 23K-0018
 ## Ukkashah Ahmed 23K-0055
 ## Muhammad Ali 23K-0052
 
