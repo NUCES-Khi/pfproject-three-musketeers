@@ -6,6 +6,9 @@
 # Video demo for the game
 https://github.com/NUCES-Khi/pfproject-three-musketeers/assets/47947561/dd806924-799c-4907-a5b6-86564f0af11c
 
+# Presentation video for the Project
+[![Watch the video](https://img.youtube.com/vi/1f1zMSoqies/default.jpg)](https://youtu.be/1f1zMSoqies)
+
 # Proposal Idea/Overview:
 This project is about a game called Connect4. The game's rules are simple and have been demonstrated clearly in the video.
 
